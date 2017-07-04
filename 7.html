@@ -12,11 +12,13 @@
                	for (var i = 0; i < len; i++)
                	{
                   if (i in this)
-                  	if (this[i]<=9&&this[i]>=0)
-                  		res[i] = fun.call(thisp, this[i], i, this);
-			else{
-				alert(this[i]);
+                  	if (isNaN(this[i])){
+				var alerttext=this[i]+" is not a number";
+                  		alert(alerttext);
 				res[i] = "was not number";
+			}
+			else{
+				res[i] = fun.call(thisp, this[i], i, this);
 			}
                	}
                	return res;
