@@ -1,0 +1,50 @@
+<html>
+<head>
+
+<script>
+var items = [];
+var itemnum=0; 
+var total=0;
+var totaltax=0;
+function input() {
+    var x = document.getElementById("form");
+    items.push({iname:x.elements[0].value, cost:Number(x.elements[1].value), imported:x.elements[2].value, taxable:x.elements[3].value});
+    text=items[itemnum].iname+" "+items[itemnum].cost+" "+items[itemnum].imported+" "+items[itemnum].taxable;
+    document.getElementById("display").innerHTML = text;
+    document.getElementById("form").reset();
+    itemnum++; 
+}
+
+function result() {
+    var taxperc=0;
+    var tax=0;
+    var text="";
+    for(i=0;i<items.length;i++){
+	if(items[i].imported=="y")
+	    taxperc+=5;
+	if(items[i].taxable=="y")
+	    taxperc+=10;
+    	tax=Math.round(items[i].cost*taxperc*20/100)/20;
+	items[i].tax=Number(tax.toFixed(3));
+	total+=items[i].cost+items[i].tax;
+	totaltax+=items[i].tax;
+    }
+    text=String(total)+" "+String(totaltax);
+    document.getElementById("display").innerHTML = text;
+}
+</script>
+
+</head>
+
+Enter the items purchased<br>  
+<form id="form">
+  Item Name: <input type="text" name="iname"><br>
+  Item Cost: <input type="number" name="cost"><br>
+  Imported(y/n): <input type="text" name="imported"><br>
+  Sales Tax Exempt(y/n): <input type="text" name="taxable"><br>
+</form> 
+<button onclick="input()">Submit</button>
+<button onclick="result()">Done</button>
+<p id="display"></p>
+</html>
+
