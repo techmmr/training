@@ -19,6 +19,7 @@
   "homepage": "https://github.com/techmmr/training#readme",
   "dependencies": {
     "express": "^4.15.3",
+    "prompt": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
