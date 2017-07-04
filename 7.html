@@ -1,0 +1,32 @@
+<html>
+<head>
+<script>
+	function double(num){return 2*num}
+	Array.prototype.map = function(fun)
+	{
+		var len = this.length;
+               
+               	var res = new Array(len);
+               	var thisp = arguments[1];
+               
+               	for (var i = 0; i < len; i++)
+               	{
+                  if (i in this)
+                  	if (isNaN(this[i])){
+				var alerttext=this[i]+" is not a number";
+                  		alert(alerttext);
+				res[i] = "was not number";
+			}
+			else{
+				res[i] = fun.call(thisp, this[i], i, this);
+			}
+               	}
+               	return res;
+        };
+         
+         var numbers = [1, 'c', 9];
+         var doubles = numbers.map(double);
+         document.write("doubles are : " + doubles ); 
+</script>
+</head>
+</html>
