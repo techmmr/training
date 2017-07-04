@@ -2,10 +2,10 @@
   "name": "training",
   "version": "1.0.0",
   "description": "training stuffs",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js --exec babel-node --presets es2015,stage-2"
+    "start": "nodemon lib/index.js --exec babel-node --presets es2015,stage-2"
   },
   "repository": {
     "type": "git",
