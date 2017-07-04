@@ -1,0 +1,27 @@
+<html>
+<head>
+<script>
+var arr = ["abc", "def", "sdfas"];
+var count= {};
+for(i=97;i<123;i++){
+	var c=String.fromCharCode(i);
+	count[String(c)]=0;
+}
+for(i=0;i<arr.length;i++){
+	var str=arr[i];
+	for(j=0;j<str.length;j++){
+		var c=str[j];
+		count[String(c)]++;
+	}
+}
+for(i=97;i<123;i++){
+	var c=String.fromCharCode(i);
+	document.write(c);
+	document.write("&emsp;", count[String(c)]);
+	document.write("<br>");
+}
+
+</script>
+</html>
+</head>
+
