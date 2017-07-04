@@ -4,7 +4,8 @@ function generateTax(items) {
     var tax=0;
     var totalTax=0
     var total=0;
-    for(i=0;i<items.length;i++){
+    console.log(items.length);
+    for(var i=0;i<items.length;i++){
         if(items[i].imported==YES)
 	       taxPercentage+=5;
         if(items[i].taxable==YES)
@@ -14,6 +15,6 @@ function generateTax(items) {
 	total+=items[i].cost+items[i].tax;
 	totalTax+=items[i].tax;
     }
-    console.log('total cost : ${total} | total tax : ${totaltax}');
+    console.log(`total cost : ${total} | total tax : ${totalTax}`);
 }
-export {generateTax }
+export {generateTax}

@@ -1,7 +1,7 @@
 function createList() {
-    var Items = [];
-    items.push({itemName:"name1", cost:50, imported:'y', taxable:'n'});
+    var items = [];
+    items.push({itemName:"name1", cost:40, imported:'y', taxable:'y'});
     items.push({itemName:"name2", cost:50, imported:'n', taxable:'y'});
-    return Items;
+    return items;
 }
 export {createList}
