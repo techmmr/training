@@ -29,7 +29,7 @@ function result() {
 	total+=items[i].cost+items[i].tax;
 	totaltax+=items[i].tax;
     }
-    text=String(total)+" "+String(totaltax);
+    text="total cost : "+String(total)+"<br>total tax : "+String(totaltax);
     document.getElementById("display").innerHTML = text;
 }
 </script>
