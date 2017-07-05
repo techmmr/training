@@ -1,0 +1,18 @@
+<html>
+<head>
+<script>
+	var numbers = [1, 'c', 92]; 
+	var doubles = numbers.map(function (x)	{
+						if(isNaN(x)){
+							var alerttext=x+" is not a number";
+							alert(alerttext);
+							return "was not number";
+						}
+						else{
+							return 2*x;
+						}
+						})
+         document.write("doubles are : " + doubles ); 
+</script>
+</head>
+</html>
